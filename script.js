@@ -60,6 +60,15 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
+// Close navbar when any nav link is clicked (for mobile)
+
+document.querySelectorAll(".navbar a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.querySelector(".navbar").classList.remove("active");
+    document.getElementById("menu-icon")?.classList.remove("bx-x");
+  });
+});
+
 // scroll reveal
 
 ScrollReveal({
