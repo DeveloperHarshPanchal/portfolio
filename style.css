@@ -1025,12 +1025,14 @@ body {
     overflow-x: hidden !important;
     font-family: "Poppins", sans-serif;
   }
-  header {
-    padding: 10px 5%;
-  }
-  header {
-    right: 0;
 
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4% !important;
     z-index: 1000;
 
     display: flex;
@@ -1038,6 +1040,13 @@ body {
     justify-content: space-between;
 
     transition: 0.3s ease;
+  }
+
+  .home-content h1 {
+    font-size: 1.5rem;
+  }
+  .home-content h3 {
+    font-size: 2rem;
   }
   .navbar {
     display: flex;
@@ -1072,7 +1081,7 @@ body {
   }
 
   .home-img img {
-    width: 80%;
+    width: 70%;
     max-width: 280px;
   }
 
@@ -1088,7 +1097,7 @@ body {
   }
   .home-img img,
   .about-img img {
-    width: 80%; /* shrink image a bit */
+    width: 70%; /* shrink image a bit */
     max-width: 300px;
     margin-right: 43px;
   }
@@ -1121,16 +1130,21 @@ body {
     overflow-x: hidden !important;
     font-family: "Poppins", sans-serif;
   }
-  header {
-    paddin #menu-icon {
-      display: none; /* default hidden on desktop */
 
-      color: #fff;
-      cursor: pointer;
-      position: relative;
-      z-index: 2000; /* always above navbar */
-    }
-    g: 8px 4%;
+  #menu-icon {
+    display: none; /* default hidden on desktop */
+    padding: 1rem 4% !important;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2000; /* always above navbar */
+  }
+
+  .home-content h1 {
+    font-size: 3.3rem;
+  }
+  .home-content h3 {
+    font-size: 2rem;
   }
   #menu-icon {
     display: none; /* default hidden on desktop */
