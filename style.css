@@ -375,8 +375,8 @@ body {
 }
 .timeline-content h4 {
   font-size: 13px;
-  font-weight: 400;
-  color: white;
+  font-weight: 600;
+  color: #17ea5a;
   margin-bottom: 0 0 10px;
 }
 .timeline-content p {
@@ -394,6 +394,9 @@ body {
 ::-webkit-scrollbar-track {
   background: var(--second-bg-color);
   width: 50px;
+}
+.fa-calendar-alt {
+  color: #ff9800;
 }
 /* ---------------------skills----------------- */
 #skills {
@@ -852,6 +855,18 @@ body {
 /* ===== MEDIA QUERIES ===== */
 
 /* Tablets */
+@media (max-width: 1300px) {
+  .navbar {
+    gap: 2rem;
+  }
+  .navbar a {
+    font-size: 1.3rem;
+    margin-left: 2rem;
+  }
+  header {
+    padding: 1.5rem 5%;
+  }
+}
 @media (max-width: 1024px) {
   html,
   body {
