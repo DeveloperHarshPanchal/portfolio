@@ -1196,6 +1196,8 @@ body {
   .timeline-content {
     min-height: 180px; /* slightly smaller but still uniform */
     padding: 1.2rem;
+    width: 98%; /* Increase width */
+    margin: 0 auto; /* Center the box */
   }
 
   .timeline-content h3 {
@@ -1339,12 +1341,18 @@ body {
   }
   .portfolio-layer a {
     position: absolute;
-    top: 12rem; /* 12rem from the top of the overlay */
+    top: 13rem; /* 12rem from the top of the overlay */
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
   }
   .portfolio-layer h4 {
-    margin-top: -8rem; /* add margin to push down */
+    margin-top: -7rem;
+    font-size: 2.5rem; /* add margin to push down */
+  }
+}
+@media (max-width: 768px) {
+  .portfolio .portfolio-box h3 {
+    display: none;
   }
 }
