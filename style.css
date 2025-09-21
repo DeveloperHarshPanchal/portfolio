@@ -96,7 +96,7 @@ body {
   color: var(--text-color);
   display: none;
 }
-/* --------------------------------------------- */
+/* -----------------background animation---------------------------- */
 .box {
   position: absolute;
   top: 0;
@@ -258,7 +258,6 @@ span {
   padding: 1rem 2.8rem;
   background: var(--main-color);
   border-radius: 4rem;
-  box-shadow: 0 0 1rem var(--main-color);
   font-size: 1.6rem;
   color: var(--second-bg-color);
   letter-spacing: 0.1rem;
@@ -268,6 +267,7 @@ span {
 .btn:hover {
   box-shadow: none;
   background: #ff5722;
+  box-shadow: 0 0 1rem var(--main-color);
 }
 #downloadbtn {
   color: white;
@@ -312,9 +312,6 @@ span {
   margin-bottom: 5rem;
 }
 /* -----------------------popup---------- */
-body {
-  font-family: Arial, sans-serif;
-}
 /* Overlay background */
 .overlay {
   display: none;
@@ -611,7 +608,7 @@ body {
   }
 }
 
-/* -----------------services---------------------- */
+/* -----------------services certification---------------------- */
 .services-container {
   display: flex;
   justify-content: center;
@@ -634,7 +631,11 @@ body {
 }
 .services-box i {
   font-size: 7rem;
-  color: var(--main-color);
+  background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .services-box h3 {
   font-size: 2.6rem;
@@ -643,7 +644,7 @@ body {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
 }
-/* ---------------portfolio------- */
+/* ---------------portfolio projects------- */
 
 .portfolio {
   background-color: var(--second-bg-color);
@@ -730,10 +731,7 @@ body {
   color: #fff;
   z-index: 2;
   text-align: center;
-
-  /* gradient strip across bottom */
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-
   transition: opacity 0.4s ease;
 }
 
@@ -747,7 +745,7 @@ body {
   opacity: 0;
 }
 
-/* Contact Section Layout */
+/*-------------------- Contact Section Layout---------- */
 .contact {
   display: flex;
   justify-content: center;
@@ -942,7 +940,7 @@ body {
   color: var(--second-bg-color);
 }
 
-/* ===== MEDIA QUERIES ===== */
+/*---------------------------MEDIA QUERIES------------------------- */
 
 /* Tablets */
 @media (max-width: 1300px) {
@@ -957,6 +955,7 @@ body {
     padding: 1.5rem 5%;
   }
 }
+
 @media (max-width: 1024px) {
   html,
   body {
@@ -964,18 +963,14 @@ body {
     overflow-x: hidden !important;
     font-family: "Poppins", sans-serif;
   }
+
   header {
     padding: 12px 6%;
-  }
-  header {
     right: 0;
-
     z-index: 1000;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     transition: 0.3s ease;
   }
 
@@ -983,8 +978,8 @@ body {
     display: block !important; /* always visible */
   }
   #menu-icon {
-    display: none; /* default hidden on desktop */
-
+    display: block !important; /* always visible */
+    /* display: none;  */
     color: #fff;
     cursor: pointer;
     position: relative;
@@ -1108,11 +1103,9 @@ body {
     width: 100%;
     padding: 1rem 4% !important;
     z-index: 1000;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     transition: 0.3s ease;
   }
 
@@ -1128,21 +1121,15 @@ body {
   }
   #menu-icon {
     display: none; /* default hidden on desktop */
-
     color: #fff;
     cursor: pointer;
     position: relative;
     z-index: 2000; /* always above navbar */
-  }
-
-  #menu-icon {
     display: block !important;
   }
 
   .navbar a {
     font-size: 0.9rem;
-  }
-  .navbar a {
     text-decoration: none;
     /* font-size: 1rem; */
     font-weight: 500;
@@ -1212,6 +1199,7 @@ body {
     cursor: pointer;
     position: relative;
     z-index: 2000; /* always above navbar */
+    font-size: 1.8rem;
   }
 
   .home-content h1 {
@@ -1220,32 +1208,14 @@ body {
   .home-content h3 {
     font-size: 2rem;
   }
-  #menu-icon {
-    display: none; /* default hidden on desktop */
 
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    z-index: 2000; /* always above navbar */
-  }
   header {
     right: 0;
-
     z-index: 1000;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     transition: 0.3s ease;
-  }
-
-  #menu-icon {
-    font-size: 1.8rem;
-  }
-
-  .navbar a {
-    font-size: 0.85rem;
   }
   .navbar {
     display: flex;
