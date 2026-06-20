@@ -2,7 +2,7 @@
 
 A modern and responsive **Personal Portfolio Website** built using **HTML, CSS, and JavaScript**, featuring stunning **Glassmorphism UI**, animated backgrounds with **Three.js**, and dynamic typing effects powered by **Typed.js**.
 
-Website is live at : https://developerharshpanchal.github.io/portfolio/ 
+Website is live at : https://developerharshpanchal.github.io/portfolio/
 
 ## ✨ Features
 
@@ -35,27 +35,35 @@ Website is live at : https://developerharshpanchal.github.io/portfolio/
 ## 📂 Sections Included
 
 ### 🏠 Home
+
 Introduction with animated typing effects and social media links.
 
 ### 👨‍💻 About
+
 Brief overview about me and my journey as a developer.
 
 ### 🎓 Qualifications
+
 Educational background and achievements.
 
 ### 💡 Skills
+
 Technical skills and technologies I work with.
 
 ### 📜 Certifications
+
 Certificates and accomplishments.
 
 ### 🚀 Projects
+
 Collection of my featured projects with descriptions.
 
 ### 📬 Contact
+
 Ways to connect with me.
 
 ### 🌐 Social Media
+
 Links to my professional profiles and platforms.
 
 ---
@@ -120,11 +128,11 @@ portfolio/
 
 ## 🌟 Technologies Used
 
-| Frontend | Libraries |
-|-----------|-----------|
-| HTML5 | Typed.js |
-| CSS3 | Three.js |
-| JavaScript | Boxicons |
+| Frontend   | Libraries |
+| ---------- | --------- |
+| HTML5      | Typed.js  |
+| CSS3       | Three.js  |
+| JavaScript | Boxicons  |
 
 ---
 
