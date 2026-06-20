@@ -2,7 +2,9 @@
 
 A modern and responsive **Personal Portfolio Website** built using **HTML, CSS, and JavaScript**, featuring stunning **Glassmorphism UI**, animated backgrounds with **Three.js**, and dynamic typing effects powered by **Typed.js**.
 
-Website is live at : https://developerharshpanchal.github.io/portfolio/
+-live at Github🚀 : https://developerharshpanchal.github.io/portfolio/
+
+-live at Vercel🚀 : https://harshpanchal-portfolio.vercel.app/
 
 ## ✨ Features
 
