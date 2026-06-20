@@ -1,23 +1,34 @@
+// =========================
+// Popup
+// =========================
+
 const openBtn = document.getElementById("openPopup");
 const overlay = document.getElementById("popupOverlay");
 const closeBtn = document.getElementById("closePopup");
 
-openBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  overlay.style.display = "flex";
-});
+if (openBtn) {
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    overlay.style.display = "flex";
+  });
+}
 
-closeBtn.addEventListener("click", () => {
-  overlay.style.display = "none";
-});
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+}
 
-// Close popup if user clicks outside the box
-overlay.addEventListener("click", (e) => {
+overlay?.addEventListener("click", (e) => {
   if (e.target === overlay) {
     overlay.style.display = "none";
   }
 });
-// toggle icon navbar
+
+// =========================
+// Mobile Menu
+// =========================
+
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
@@ -25,15 +36,20 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
-// Close menu when clicking a link (optional)
+
 document.querySelectorAll(".navbar a").forEach((link) => {
-  link.onclick = () => {
+  link.addEventListener("click", () => {
     navbar.classList.remove("active");
-  };
+    menuIcon.classList.remove("bx-x");
+  });
 });
-// scroll section active link
+
+// =========================
+// Active Navbar
+// =========================
+
 let sections = document.querySelectorAll("section");
-let navlinks = document.querySelectorAll("header nav a");
+let navLinks = document.querySelectorAll("header nav a");
 
 window.onscroll = () => {
   sections.forEach((sec) => {
@@ -43,116 +59,89 @@ window.onscroll = () => {
     let id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
-      navlinks.forEach((links) => {
-        links.classList.remove("active");
-        const activeLink = document.querySelector(`header nav a[href*=${id}]`);
-        if (activeLink) activeLink.classList.add("active");
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
       });
+
+      document
+        .querySelector("header nav a[href*=" + id + "]")
+        ?.classList.add("active");
     }
   });
-
-  let header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 100);
-
-  /* remove toggle icon and navbar when click navbar link */
 
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
 };
 
-// Close navbar when any nav link is clicked (for mobile)
-
-document.querySelectorAll(".navbar a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.querySelector(".navbar").classList.remove("active");
-    document.getElementById("menu-icon")?.classList.remove("bx-x");
-  });
-});
-
-// scroll reveal
+// =========================
+// Scroll Reveal
+// =========================
 
 ScrollReveal({
-  reset: true,
+  reset: false,
   distance: "80px",
-  duration: 2000,
+  duration: 1800,
   delay: 200,
 });
-ScrollReveal().reveal(".home-content,.heading", { origin: "top" });
+
+ScrollReveal().reveal(".home-content,.heading", {
+  origin: "top",
+});
+
 ScrollReveal().reveal(
-  ".home-img,.skills-columns,.timeline-items,.services-container,.portfolio-box,.contact-form",
-  { origin: "bottom" }
+  ".home-img,.skills-columns,.timeline-items,.services-container,.portfolio-container,.contact",
+  {
+    origin: "bottom",
+  },
 );
-ScrollReveal().reveal(".home-content h1,.about-img", { origin: "left" });
-ScrollReveal().reveal(".home-content p,.about-content", { origin: "right" });
 
-// typed.js
+ScrollReveal().reveal(".about-img", {
+  origin: "left",
+});
 
-const typed = new Typed(".multiple-text", {
-  strings: ["Aspiring Web Developer", "Aspiring Full-Stack Developer"],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
+ScrollReveal().reveal(".about-content", {
+  origin: "right",
+});
+
+// =========================
+// Typed.js
+// =========================
+
+new Typed(".multiple-text", {
+  strings: [
+    "Web Developer",
+    "MERN Stack Developer",
+    "Frontend Developer",
+    "Full-Stack Developer",
+  ],
+  typeSpeed: 90,
+  backSpeed: 70,
+  backDelay: 1200,
   loop: true,
 });
 
-// const form = document.querySelector(".contact-form");
-// const emailInput = document.querySelector("input[name='email']");
-// const errorMsg = document.querySelector(".error-msg");
+// =========================
+// Contact Form
+// =========================
 
-// form.addEventListener("submit", async function (e) {
-//   e.preventDefault(); // stop normal submit
-
-//   const email = emailInput.value.trim();
-//   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-//   // Email validation
-//   if (!regex.test(email)) {
-//     errorMsg.textContent = "❌ Please enter a valid email address";
-//     emailInput.focus();
-//     return;
-//   } else {
-//     errorMsg.textContent = "";
-//   }
-
-//   // Prepare data
-//   const formData = new FormData(form);
-
-//   // Send to Web3Forms
-//   const response = await fetch(form.action, {
-//     method: form.method,
-//     body: formData,
-//   });
-
-//   if (response.ok) {
-//     alert("✅ Message sent successfully!");
-//     form.reset(); // clear inputs
-//   } else {
-//     alert("❌ Failed to send message. Please try again.");
-//   }
-// });
-
-// Select form, email input, and status div
 const form = document.querySelector(".contact-form");
 const emailInput = document.querySelector("input[name='email']");
 const errorMsg = document.querySelector(".error-msg");
 const statusDiv = document.getElementById("form-status");
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault(); // stop default submission
+form?.addEventListener("submit", async function (e) {
+  e.preventDefault();
 
   const email = emailInput.value.trim();
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Email validation
   if (!regex.test(email)) {
-    errorMsg.textContent = "❌ Please enter a valid email address";
-    emailInput.focus();
+    errorMsg.textContent = "Please enter a valid email";
     return;
-  } else {
-    errorMsg.textContent = "";
   }
 
-  // Prepare form data
+  errorMsg.textContent = "";
+
   const formData = new FormData(form);
 
   try {
@@ -162,31 +151,119 @@ form.addEventListener("submit", async function (e) {
     });
 
     if (response.ok) {
-      // Success message
-      statusDiv.textContent = "✅ Message sent successfully!";
-      statusDiv.classList.remove("error");
+      statusDiv.textContent = "✅ Message Sent Successfully";
       statusDiv.classList.add("success");
-      statusDiv.style.opacity = "1";
-
-      form.reset(); // clear all inputs
+      form.reset();
     } else {
-      // Error message
-      statusDiv.textContent = "❌ Failed to send message. Please try again.";
-      statusDiv.classList.remove("success");
+      statusDiv.textContent = "❌ Failed to send";
       statusDiv.classList.add("error");
-      statusDiv.style.opacity = "1";
     }
-  } catch (error) {
-    // Network error
-    statusDiv.textContent = "❌ Something went wrong. Please try again later.";
-    statusDiv.classList.remove("success");
-    statusDiv.classList.add("error");
-    statusDiv.style.opacity = "1";
-    console.error(error);
+  } catch (err) {
+    statusDiv.textContent = "❌ Something went wrong";
   }
 
-  // Fade out after 4 seconds
+  statusDiv.style.opacity = "1";
+
   setTimeout(() => {
     statusDiv.style.opacity = "0";
   }, 4000);
+});
+
+// ====================================================
+// THREE.JS GLASS BACKGROUND (Floating Particles)
+// ====================================================
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000,
+);
+
+camera.position.z = 30;
+
+const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  antialias: true,
+});
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+renderer.domElement.style.position = "fixed";
+renderer.domElement.style.top = "0";
+renderer.domElement.style.left = "0";
+renderer.domElement.style.zIndex = "-1";
+
+document.body.appendChild(renderer.domElement);
+
+// ======================
+// PARTICLES
+// ======================
+
+const particlesGeometry = new THREE.BufferGeometry();
+
+const count = 2000;
+
+const positions = new Float32Array(count * 3);
+
+for (let i = 0; i < count * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 100;
+}
+
+particlesGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3),
+);
+
+const particlesMaterial = new THREE.PointsMaterial({
+  size: 0.15,
+  color: 0x00ffff,
+});
+
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+
+scene.add(particles);
+
+// ======================
+// Mouse Interaction
+// ======================
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener("mousemove", (event) => {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+});
+
+// ======================
+// Animation
+// ======================
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  particles.rotation.y += 0.0008;
+  particles.rotation.x += 0.0003;
+
+  camera.position.x += (mouseX * 0.0005 - camera.position.x) * 0.03;
+  camera.position.y += (-mouseY * 0.0005 - camera.position.y) * 0.03;
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// ======================
+// Responsive
+// ======================
+
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
 });
