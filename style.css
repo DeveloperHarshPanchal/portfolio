@@ -648,11 +648,13 @@ PROJECTS GLASS
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+  aspect-ratio: 16 / 9;
 }
 
 .portfolio-box img {
   width: 100%;
   transition: 0.5s;
+  object-fit: cover;
 }
 
 .portfolio-box:hover img {
