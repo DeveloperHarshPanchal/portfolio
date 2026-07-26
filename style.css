@@ -721,7 +721,105 @@ PROJECTS GLASS
 .portfolio-box:hover h3 {
   opacity: 0;
 }
+/* ==========================
+Experince
+========================== */
+/* Experience Section */
+.experience {
+  padding: 10rem 8% 5rem;
+}
 
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* Experience Card */
+.experience-box {
+  padding: 2.5rem;
+  border-radius: 2rem;
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover Effect */
+.experience-box:hover {
+  transform: translateY(-10px);
+  border-color: #00f5ff;
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.25);
+}
+
+/* Company Name */
+.experience-box h4 {
+  font-size: 1.8rem;
+  color: #00f5ff;
+  margin-bottom: 0.8rem;
+}
+
+/* Role */
+.experience-box h3 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Duration */
+.experience-box .duration {
+  font-size: 1.5rem;
+  color: #b8b8b8;
+  margin-bottom: 1.5rem;
+}
+
+/* Description */
+.experience-box ul {
+  padding-left: 2rem;
+}
+
+.experience-box li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+/* Decorative Glow */
+.experience-box::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #00f5ff;
+  filter: blur(100px);
+  opacity: 0.15;
+  top: -50px;
+  right: -50px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .experience-container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .experience-box li {
+    font-size: 1.3rem;
+  }
+}
 /* ==========================
 CONTACT GLASS
 ========================== */
